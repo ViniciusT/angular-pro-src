@@ -47,14 +47,14 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
   constructor(private cd: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
-    if (this.message) {
+    if (this.message) { //multiple elements of the viewchild.
       this.message.forEach((message) => {
         message.days = 30;
       });
-      this.cd.detectChanges();
+      this.cd.detectChanges();//to not have angular warnings on the time that is compiled
     }
   }
-  
+
   ngAfterContentInit() {
     if (this.remember) {
       this.remember.forEach((item) => {

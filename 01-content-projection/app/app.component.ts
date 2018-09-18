@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { User } from './auth-form/auth-form.interface';
-
+//elements passes trought the ng-content.
 @Component({
   selector: 'app-root',
   template: `

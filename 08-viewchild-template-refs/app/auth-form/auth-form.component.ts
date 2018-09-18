@@ -32,7 +32,7 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
 
   showMessage: boolean;
 
-  @ViewChild('email') email: ElementRef;
+  @ViewChild('email') email: ElementRef; //using email to get the native element from the templateRef like changing the Dom element
 
   @ViewChildren(AuthMessageComponent) message: QueryList<AuthMessageComponent>;
 
@@ -51,7 +51,7 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
       this.cd.detectChanges();
     }
   }
-  
+
   ngAfterContentInit() {
     if (this.remember) {
       this.remember.forEach((item) => {

@@ -32,7 +32,7 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
 
   showMessage: boolean;
 
-  @ViewChild(AuthMessageComponent) message: AuthMessageComponent;
+  @ViewChild(AuthMessageComponent) message: AuthMessageComponent;//importing the Auth Message scope to this variable.
 
   @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
 
@@ -40,10 +40,12 @@ export class AuthFormComponent implements AfterContentInit, AfterViewInit {
 
   ngAfterViewInit() {
     // this.message.days = 30;
+    //does not work here beacuse it changes the value two times.
   }
-  
+
   ngAfterContentInit() {
     if (this.message) {
+      //changes the value from the variable days inside the component.
       this.message.days = 30;
     }
     if (this.remember) {

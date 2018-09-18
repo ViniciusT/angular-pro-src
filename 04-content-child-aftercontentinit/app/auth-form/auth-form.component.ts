@@ -31,13 +31,14 @@ export class AuthFormComponent implements AfterContentInit {
 
   showMessage: boolean;
 
-  @ContentChild(AuthRememberComponent) remember: AuthRememberComponent;
-
+  @ContentChild(AuthRememberComponent) remember: AuthRememberComponent;//passing the component to access it.
+  //checking the register of the component
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
   ngAfterContentInit() {
-    if (this.remember) {
-      this.remember.checked.subscribe((checked: boolean) => this.showMessage = checked);
+    //here you get the checked event
+    if (this.remember) {//if we have access the particular element
+      this.remember.checked.subscribe((checked: boolean) => this.showMessage = checked); // you can subscribe to the changes of an output
     }
   }
 

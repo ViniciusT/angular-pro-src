@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 import { User } from './auth-form.interface';
-
+//here the select atribute is marking what is passed where, selecting the h3 to appear on the init and the button to appear on the end.
 @Component({
   selector: 'auth-form',
   template: `

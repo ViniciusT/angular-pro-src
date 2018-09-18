@@ -32,12 +32,14 @@ export class AuthFormComponent implements AfterContentInit {
   showMessage: boolean;
 
   @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
+  //each query list component will have this type
+  //used for multiple children components
 
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
   ngAfterContentInit() {
     if (this.remember) {
-      this.remember.forEach((item) => {
+      this.remember.forEach((item) => { //subscribing to each one of them.
         item.checked.subscribe((checked: boolean) => this.showMessage = checked);
       });
     }
